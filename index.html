@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Black Champ Cafe & Resto | Tebet Jakarta</title>
+  <meta name="description" content="Cafe & Resto di Tebet dengan live music setiap hari. Cocok untuk nongkrong, meeting, lunch, dan quality time. Jl. Tebet Timur Dalam II No.28">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --black: #0a0a0a;
+      --dark: #141414;
+      --charcoal: #1e1e1e;
+      --gold: #c9a227;
+      --gold-light: #e8c547;
+      --cream: #f5f0e6;
+      --muted: #a0a0a0;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--black);
+      color: var(--cream);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 600;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      padding: 18px 0;
+      transition: background 0.3s, padding 0.3s;
+      background: transparent;
+    }
+
+    nav.scrolled {
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(12px);
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(201, 162, 39, 0.15);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--gold);
+    }
+
+    .logo span {
+      color: var(--cream);
+      font-weight: 400;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      opacity: 0.85;
+      transition: opacity 0.2s, color 0.2s;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+      color: var(--gold);
+    }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--black);
+      padding: 10px 22px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold-light);
+      transform: translateY(-1px);
+    }
+
+    .menu-toggle {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--cream);
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      background: 
+        linear-gradient(180deg, rgba(10,10,10,0.7) 0%, rgba(10,10,10,0.85) 50%, rgba(10,10,10,0.95) 100%),
+        radial-gradient(ellipse at 50% 30%, rgba(201,162,39,0.12) 0%, transparent 60%);
+      padding: 120px 24px 80px;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 6px 18px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 7vw, 4.5rem);
+      line-height: 1.15;
+      margin-bottom: 20px;
+      color: var(--cream);
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      color: var(--muted);
+      max-width: 560px;
+      margin: 0 auto 36px;
+      font-weight: 300;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      border-radius: 4px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.3px;
+      transition: all 0.25s;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-primary {
+      background: var(--gold);
+      color: var(--black);
+    }
+
+    .btn-primary:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(201,162,39,0.3);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--cream);
+      border: 1px solid rgba(245,240,230,0.35);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    .hero-meta {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 56px;
+      flex-wrap: wrap;
+    }
+
+    .meta-item {
+      text-align: center;
+    }
+
+    .meta-item strong {
+      display: block;
+      font-size: 1.4rem;
+      color: var(--gold);
+      font-family: 'Playfair Display', serif;
+    }
+
+    .meta-item span {
+      font-size: 0.8rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 100px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-header .label {
+      color: var(--gold);
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .section-header h2 {
+      font-size: clamp(2rem, 4vw, 2.8rem);
+      margin-bottom: 16px;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto;
+      font-weight: 300;
+    }
+
+    /* ABOUT */
+    .about {
+      background: var(--dark);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .about-text h3 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      color: var(--cream);
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 16px;
+      font-weight: 300;
+    }
+
+    .about-features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 28px;
+    }
+
+    .feature-card {
+      background: var(--charcoal);
+      padding: 18px;
+      border-radius: 8px;
+      border: 1px solid rgba(201,162,39,0.1);
+    }
+
+    .feature-card .icon {
+      font-size: 1.4rem;
+      margin-bottom: 8px;
+    }
+
+    .feature-card h4 {
+      font-size: 0.95rem;
+      margin-bottom: 4px;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+    }
+
+    .feature-card p {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin: 0;
+    }
+
+    .about-visual {
+      position: relative;
+      height: 420px;
+      border-radius: 12px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #1a1a1a 0%, #2a2418 100%);
+      border: 1px solid rgba(201,162,39,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .about-visual .big-icon {
+      font-size: 4rem;
+      opacity: 0.7;
+    }
+
+    .about-visual .visual-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--gold);
+      letter-spacing: 2px;
+    }
+
+    /* MENU */
+    .menu-section {
+      background: var(--black);
+    }
+
+    .menu-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+
+    .menu-tab {
+      padding: 10px 24px;
+      border-radius: 50px;
+      background: transparent;
+      border: 1px solid rgba(245,240,230,0.2);
+      color: var(--muted);
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+
+    .menu-tab.active,
+    .menu-tab:hover {
+      background: var(--gold);
+      color: var(--black);
+      border-color: var(--gold);
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .menu-item {
+      background: var(--dark);
+      border-radius: 10px;
+      padding: 24px;
+      border: 1px solid rgba(201,162,39,0.08);
+      transition: border-color 0.25s, transform 0.25s;
+    }
+
+    .menu-item:hover {
+      border-color: rgba(201,162,39,0.35);
+      transform: translateY(-4px);
+    }
+
+    .menu-item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+
+    .menu-item h4 {
+      font-size: 1.1rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+    }
+
+    .menu-item .price {
+      color: var(--gold);
+      font-weight: 600;
+      font-size: 0.95rem;
+      white-space: nowrap;
+    }
+
+    .menu-item p {
+      font-size: 0.85rem;
+      color: var(--muted);
+      font-weight: 300;
+    }
+
+    .menu-item .tag {
+      display: inline-block;
+      margin-top: 12px;
+      font-size: 0.7rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(201,162,39,0.4);
+      padding: 3px 10px;
+      border-radius: 4px;
+    }
+
+    /* EXPERIENCE */
+    .experience {
+      background: var(--dark);
+    }
+
+    .exp-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .exp-card {
+      background: var(--charcoal);
+      border-radius: 12px;
+      padding: 36px 28px;
+      text-align: center;
+      border: 1px solid rgba(201,162,39,0.1);
+      transition: transform 0.25s, border-color 0.25s;
+    }
+
+    .exp-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(201,162,39,0.35);
+    }
+
+    .exp-card .icon {
+      font-size: 2.4rem;
+      margin-bottom: 18px;
+    }
+
+    .exp-card h3 {
+      font-size: 1.25rem;
+      margin-bottom: 12px;
+    }
+
+    .exp-card p {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 300;
+    }
+
+    /* REVIEWS */
+    .reviews {
+      background: var(--black);
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .review-card {
+      background: var(--dark);
+      border-radius: 12px;
+      padding: 28px;
+      border: 1px solid rgba(201,162,39,0.08);
+    }
+
+    .stars {
+      color: var(--gold);
+      margin-bottom: 14px;
+      font-size: 0.95rem;
+      letter-spacing: 2px;
+    }
+
+    .review-card p {
+      font-style: italic;
+      color: var(--cream);
+      font-weight: 300;
+      margin-bottom: 18px;
+      font-size: 0.95rem;
+    }
+
+    .reviewer {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .rating-banner {
+      text-align: center;
+      margin-bottom: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .rating-score {
+      font-size: 3rem;
+      font-family: 'Playfair Display', serif;
+      color: var(--gold);
+    }
+
+    .rating-info {
+      text-align: left;
+    }
+
+    .rating-info .stars-big {
+      color: var(--gold);
+      font-size: 1.2rem;
+      letter-spacing: 3px;
+    }
+
+    .rating-info span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    /* LOCATION */
+    .location {
+      background: var(--dark);
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .location-info h3 {
+      font-size: 1.6rem;
+      margin-bottom: 24px;
+    }
+
+    .info-row {
+      display: flex;
+      gap: 16px;
+      margin-bottom: 22px;
+      align-items: flex-start;
+    }
+
+    .info-row .icon {
+      font-size: 1.3rem;
+      width: 28px;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .info-row strong {
+      display: block;
+      margin-bottom: 4px;
+      font-size: 0.95rem;
+    }
+
+    .info-row p, .info-row a {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 300;
+    }
+
+    .info-row a:hover {
+      color: var(--gold);
+    }
+
+    .map-placeholder {
+      background: var(--charcoal);
+      border-radius: 12px;
+      height: 340px;
+      border: 1px solid rgba(201,162,39,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 12px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .map-placeholder iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      filter: grayscale(30%) contrast(1.05);
+    }
+
+    .hours-table {
+      margin-top: 8px;
+      font-size: 0.9rem;
+      color: var(--muted);
+    }
+
+    .hours-table span {
+      color: var(--cream);
+    }
+
+    /* CTA */
+    .cta {
+      background: linear-gradient(135deg, #1a1608 0%, #0a0a0a 100%);
+      text-align: center;
+      padding: 90px 24px;
+      border-top: 1px solid rgba(201,162,39,0.15);
+      border-bottom: 1px solid rgba(201,162,39,0.15);
+    }
+
+    .cta h2 {
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      margin-bottom: 16px;
+    }
+
+    .cta p {
+      color: var(--muted);
+      margin-bottom: 32px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .cta-buttons {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--black);
+      padding: 48px 0 28px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      color: var(--gold);
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .footer-links a {
+      font-size: 0.85rem;
+      color: var(--muted);
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    .footer-copy {
+      text-align: center;
+      margin-top: 36px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .about-grid,
+      .location-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .exp-grid,
+      .reviews-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-visual {
+        height: 280px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links,
+      .nav-cta {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(10,10,10,0.98);
+        padding: 24px;
+        gap: 20px;
+        border-bottom: 1px solid rgba(201,162,39,0.15);
+      }
+
+      .hero-meta {
+        gap: 24px;
+      }
+
+      .about-features {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">BLACK <span>CHAMP</span></a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">Tentang</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#experience">Pengalaman</a></li>
+        <li><a href="#reviews">Ulasan</a></li>
+        <li><a href="#location">Lokasi</a></li>
+      </ul>
+      <a href="https://wa.me/6281290901200" class="nav-cta" target="_blank" rel="noopener">Reservasi</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰</button>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <div class="hero-badge">Cafe & Resto · Tebet</div>
+      <h1>Black Champ<br><em>Cafe & Resto</em></h1>
+      <p>Tempat nongkrong hits di Tebet dengan live music setiap hari. Cocok untuk lunch, meeting, work from cafe, atau quality time bersama keluarga & sahabat.</p>
+      <div class="hero-buttons">
+        <a href="https://wa.me/6281290901200?text=Halo%20Black%20Champ%2C%20saya%20ingin%20reservasi" class="btn btn-primary" target="_blank" rel="noopener">
+          Reservasi via WhatsApp
+        </a>
+        <a href="#menu" class="btn btn-outline">Lihat Menu</a>
+      </div>
+      <div class="hero-meta">
+        <div class="meta-item">
+          <strong>4.8</strong>
+          <span>Rating Google</span>
+        </div>
+        <div class="meta-item">
+          <strong>1.9rb+</strong>
+          <span>Ulasan</span>
+        </div>
+        <div class="meta-item">
+          <strong>Live Music</strong>
+          <span>Setiap Hari</span>
+        </div>
+        <div class="meta-item">
+          <strong>11.00–01.00</strong>
+          <span>Jam Buka</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Tentang Kami</span>
+        <h2>Lebih dari sekadar cafe</h2>
+        <p>Suasana hangat, rasa istimewa, dan hiburan live music yang membuat setiap kunjungan berkesan.</p>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <h3>Black Champ Cafe & Resto</h3>
+          <p>Berlokasi di jantung Tebet, Black Champ adalah cafe dan resto yang nyaman untuk makan siang, nongkrong, meeting, maupun work from cafe bersama keluarga, bestie, dan relasi.</p>
+          <p>Setiap hari kami hadirkan live music (dan DJ di malam-malam tertentu) di lantai 1. Untuk suasana lebih tenang, tersedia area outdoor di lantai atas. Indoor smoking area juga tersedia.</p>
+          <div class="about-features">
+            <div class="feature-card">
+              <div class="icon">🎸</div>
+              <h4>Live Music Harian</h4>
+              <p>Band & DJ hampir setiap hari</p>
+            </div>
+            <div class="feature-card">
+              <div class="icon">🍸</div>
+              <h4>Cocktails & Happy Hour</h4>
+              <p>Minuman & makanan spesial</p>
+            </div>
+            <div class="feature-card">
+              <div class="icon">🌿</div>
+              <h4>Indoor & Outdoor</h4>
+              <p>Pilihan suasana sesuai mood</p>
+            </div>
+            <div class="feature-card">
+              <div class="icon">🍽️</div>
+              <h4>Menu Beragam</h4>
+              <p>Indonesia, Barat & Asia</p>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual">
+          <div class="big-icon">☕</div>
+          <div class="visual-text">BLACK CHAMP</div>
+          <p style="color: var(--muted); font-size: 0.9rem; margin-top: 8px;">Champions for Life</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Menu Favorit</span>
+        <h2>Yang sering dipesan</h2>
+        <p>Dari Sop Buntut juara sampai kopi signature. Kisaran Rp 50.000 – 125.000 per orang.</p>
+      </div>
+
+      <div class="menu-tabs">
+        <button class="menu-tab active" data-cat="all">Semua</button>
+        <button class="menu-tab" data-cat="makanan">Makanan</button>
+        <button class="menu-tab" data-cat="minuman">Minuman</button>
+        <button class="menu-tab" data-cat="dessert">Dessert</button>
+      </div>
+
+      <div class="menu-grid" id="menuGrid">
+        <!-- Makanan -->
+        <div class="menu-item" data-cat="makanan">
+          <div class="menu-item-header">
+            <h4>Sop Buntut</h4>
+            <span class="price">★ Favorite</span>
+          </div>
+          <p>Sop buntut empuk dengan kuah kaya rasa. Salah satu andalan yang sering direkomendasikan pengunjung.</p>
+          <span class="tag">Makanan</span>
+        </div>
+        <div class="menu-item" data-cat="makanan">
+          <div class="menu-item-header">
+            <h4>Nasi Hainan</h4>
+            <span class="price">★ Hits</span>
+          </div>
+          <p>Nasi hainan lembut dengan ayam yang juicy. Cocok untuk makan siang yang memuaskan.</p>
+          <span class="tag">Makanan</span>
+        </div>
+        <div class="menu-item" data-cat="makanan">
+          <div class="menu-item-header">
+            <h4>Paru Cabe Garam</h4>
+            <span class="price">★ Favorite</span>
+          </div>
+          <p>Paru goreng crispy dengan bumbu cabe garam yang nendang. Favorit banyak orang.</p>
+          <span class="tag">Makanan</span>
+        </div>
+        <div class="menu-item" data-cat="makanan">
+          <div class="menu-item-header">
+            <h4>Nasi Goreng Black Champ</h4>
+            <span class="price">Signature</span>
+          </div>
+          <p>Nasi goreng signature dengan topping telur setengah matang yang meleleh.</p>
+          <span class="tag">Makanan</span>
+        </div>
+        <div class="menu-item" data-cat="makanan">
+          <div class="menu-item-header">
+            <h4>Nasi Goreng Belacan</h4>
+            <span class="price">Signature</span>
+          </div>
+          <p>Nasi goreng terasi dengan cabai rawit, daun bawang, ayam, dan telur.</p>
+          <span class="tag">Makanan</span>
+        </div>
+        <div class="menu-item" data-cat="makanan">
+          <div class="menu-item-header">
+            <h4>Mie Goreng Black Champ</h4>
+            <span class="price">Signature</span>
+          </div>
+          <p>Mie goreng dengan bumbu meresap, dilengkapi acar, lalapan, dan garnish segar.</p>
+          <span class="tag">Makanan</span>
+        </div>
+
+        <!-- Minuman -->
+        <div class="menu-item" data-cat="minuman">
+          <div class="menu-item-header">
+            <h4>Caramel Macchiato</h4>
+            <span class="price">Kopi</span>
+          </div>
+          <p>Espresso dengan susu creamy dan sirup caramel. Nikmati sambil dengerin live music.</p>
+          <span class="tag">Minuman</span>
+        </div>
+        <div class="menu-item" data-cat="minuman">
+          <div class="menu-item-header">
+            <h4>Cocktails</h4>
+            <span class="price">Bar</span>
+          </div>
+          <p>Pilihan koktail enak untuk menemani malammu. Perfect untuk happy hour.</p>
+          <span class="tag">Minuman</span>
+        </div>
+        <div class="menu-item" data-cat="minuman">
+          <div class="menu-item-header">
+            <h4>Coffee & Non-Coffee</h4>
+            <span class="price">Minuman</span>
+          </div>
+          <p>Dari espresso, latte, hingga pilihan non-coffee dan tea based yang menyegarkan.</p>
+          <span class="tag">Minuman</span>
+        </div>
+
+        <!-- Dessert -->
+        <div class="menu-item" data-cat="dessert">
+          <div class="menu-item-header">
+            <h4>Dessert Spesial</h4>
+            <span class="price">Manis</span>
+          </div>
+          <p>Pilihan pencuci mulut enak untuk menutup pengalaman makanmu di Black Champ.</p>
+          <span class="tag">Dessert</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="experience" id="experience">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Pengalaman</span>
+        <h2>Kenapa pilih Black Champ?</h2>
+        <p>Bukan cuma makan, tapi pengalaman lengkap untuk berbagai momen.</p>
+      </div>
+      <div class="exp-grid">
+        <div class="exp-card">
+          <div class="icon">🎤</div>
+          <h3>Live Music Setiap Hari</h3>
+          <p>Band perform di lantai 1 hampir setiap hari. Di weekend ada DJ. Kamu bahkan bisa request lagu!</p>
+        </div>
+        <div class="exp-card">
+          <div class="icon">💼</div>
+          <h3>Meeting & WFC</h3>
+          <p>Ruang makan pribadi tersedia. Suasana nyaman untuk meeting, work from cafe, atau diskusi santai.</p>
+        </div>
+        <div class="exp-card">
+          <div class="icon">👨‍👩‍👧</div>
+          <h3>Family & Friends</h3>
+          <p>Cocok untuk quality time keluarga, hangout bestie, atau rayakan momen spesial bersama.</p>
+        </div>
+        <div class="exp-card">
+          <div class="icon">🌙</div>
+          <h3>Happy Hour & Bar</h3>
+          <p>Minuman happy hour dan koktail enak. Indoor smoking + area outdoor di atas.</p>
+        </div>
+        <div class="exp-card">
+          <div class="icon">⚽</div>
+          <h3>Nonton Olahraga</h3>
+          <p>Cocok untuk menonton acara olahraga sambil makan dan minum bareng teman.</p>
+        </div>
+        <div class="exp-card">
+          <div class="icon">✨</div>
+          <h3>Trendi & Nyaman</h3>
+          <p>Suasana trendy tapi tetap tenang. Biasanya orang menghabiskan 1,5–4 jam di sini.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Ulasan</span>
+        <h2>Kata mereka</h2>
+      </div>
+      <div class="rating-banner">
+        <div class="rating-score">4.8</div>
+        <div class="rating-info">
+          <div class="stars-big">★★★★★</div>
+          <span>Berdasarkan 1.900+ ulasan Google</span>
+        </div>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Service, suasana asik, live music n dj yg seruuu"</p>
+          <div class="reviewer">— Pengunjung Google</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Indoor smoking, namun ada area outdoor di atas."</p>
+          <div class="reviewer">— Pengunjung Google</div>
+        </div>
+        <div class="review-card">
+          <div class="stars">★★★★★</div>
+          <p>"Nasi hainan nya enak! sop buntut nya enak🩷 paru cabe garamnya favorite😊🫶"</p>
+          <div class="reviewer">— Pengunjung Google</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="location" id="location">
+    <div class="container">
+      <div class="section-header">
+        <span class="label">Lokasi & Kontak</span>
+        <h2>Kunjungi kami</h2>
+        <p>Mudah dijangkau di kawasan Tebet Timur.</p>
+      </div>
+      <div class="location-grid">
+        <div class="location-info">
+          <h3>Black Champ Cafe & Resto</h3>
+          <div class="info-row">
+            <span class="icon">📍</span>
+            <div>
+              <strong>Alamat</strong>
+              <p>Jl. Tebet Timur Dalam II No.28, RT.1/RW.4, Tebet Tim., Kec. Tebet, Kota Jakarta Selatan, DKI Jakarta 12820</p>
+            </div>
+          </div>
+          <div class="info-row">
+            <span class="icon">🕐</span>
+            <div>
+              <strong>Jam Operasional</strong>
+              <p class="hours-table">
+                Selasa – Minggu: <span>11.00 – 01.00</span><br>
+                Senin: <span>Tutup</span>
+              </p>
+            </div>
+          </div>
+          <div class="info-row">
+            <span class="icon">📞</span>
+            <div>
+              <strong>Telepon / WhatsApp</strong>
+              <p><a href="https://wa.me/6281290901200">0812-9090-1200</a></p>
+            </div>
+          </div>
+          <div class="info-row">
+            <span class="icon">📸</span>
+            <div>
+              <strong>Instagram</strong>
+              <p><a href="https://www.instagram.com/blackchampofficial/" target="_blank" rel="noopener">@blackchampofficial</a></p>
+            </div>
+          </div>
+          <div style="margin-top: 28px; display: flex; gap: 12px; flex-wrap: wrap;">
+            <a href="https://wa.me/6281290901200?text=Halo%20Black%20Champ%2C%20saya%20ingin%20reservasi" class="btn btn-primary" target="_blank" rel="noopener">Chat WhatsApp</a>
+            <a href="https://maps.app.goo.gl/BjhBwGJQvPz9qivA8" class="btn btn-outline" target="_blank" rel="noopener">Buka di Maps</a>
+          </div>
+        </div>
+        <div class="map-placeholder">
+          <iframe 
+            src="https://maps.google.com/maps?q=Black+Champ+Cafe+Tebet+Jl.+Tebet+Timur+Dalam+II+No.28&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Lokasi Black Champ Cafe Tebet">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="container">
+      <h2>Siap nongkrong di Black Champ?</h2>
+      <p>Reservasi meja sekarang atau datang langsung. Kami tunggu kehadiranmu!</p>
+      <div class="cta-buttons">
+        <a href="https://wa.me/6281290901200?text=Halo%20Black%20Champ%2C%20saya%20ingin%20reservasi" class="btn btn-primary" target="_blank" rel="noopener">Reservasi Sekarang</a>
+        <a href="https://www.instagram.com/blackchampofficial/" class="btn btn-outline" target="_blank" rel="noopener">Follow Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="footer-inner">
+        <div class="footer-logo">BLACK CHAMP</div>
+        <ul class="footer-links">
+          <li><a href="#about">Tentang</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#location">Lokasi</a></li>
+          <li><a href="https://www.instagram.com/blackchampofficial/" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+      <div class="footer-copy">
+        © 2026 Black Champ Cafe & Resto · Tebet, Jakarta Selatan<br>
+        Champions for Life
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navbar scroll
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile menu
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // Menu filter
+    const tabs = document.querySelectorAll('.menu-tab');
+    const items = document.querySelectorAll('.menu-item');
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+        const cat = tab.dataset.cat;
+        items.forEach(item => {
+          if (cat === 'all' || item.dataset.cat === cat) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+</body>
+</html>
